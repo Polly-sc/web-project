@@ -1,0 +1,376 @@
+*{
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.intro .container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.intro {
+    padding: 15px;
+    width: 100%;
+    height: 150%;
+    background-color: #194b46;
+}
+
+.intro-basement {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    padding: 20px 10px;
+}
+
+.intro-bacement i{
+    color: black;
+}
+.intro-bacement p{
+    font-size: 15px;
+    padding: 0px;
+}
+/* Меню */
+#checkbox-menu,
+.toggle{
+    display: none;
+}
+.menu{
+    background: white;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+.menu li a {
+    align-self: center;
+    padding: 10px 15px; 
+    color: #00263e;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color .2s linear;
+}
+
+.menu li a:last-child{
+    margin-right: 50px;
+}
+
+.menu li a:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    
+    background: #009be4; 
+    opacity: 0;
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    
+    transition: opacity .2s linear;
+}
+
+
+.menu li a:hover {
+    color: #009be4;
+}
+
+.menu li a:hover:after {
+    opacity: 1;
+}
+
+.menu li a:active {
+    color: #009be4;
+}
+
+.menu li a.logo {
+    margin-right: 300px;
+    font-size: 40px;
+    color: #005780;
+    align-items: center; 
+}
+
+/*.intro {
+    position: relative;
+}
+
+.intro .intro-text{
+    font-size: 68px;
+} */
+
+@media screen and (max-width: 800px) {
+    .toggle{
+        width: 100%;
+        clear: both;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        width: 100%;
+        color: white;
+        background: #005780;
+        transition: all .1s linear;
+    }
+    .toggle:hover{
+       background: #009be4; 
+    }
+    #checkbox-menu:checked + label .touch li{
+        opacity: 1;
+        visibility: visible;
+        transition: all .7s linear;
+    } 
+    #checkbox-menu:checked + label .touch {
+        height: 300px;
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 0;
+        transition: height .3s linear;
+    }
+    .menu li{
+        display: flex;
+        width: 95%;
+        opacity: 0;
+    }
+    .row-contacts{
+        flex-direction: column;
+    }
+    .menu li a{
+        width: 95%;
+    }
+    .menu li a.logo{
+        font-size: 21px;
+        margin-right: 0px;
+    }
+    .menu li a.contacts{
+        margin-right: 0px;
+    }
+
+    .intro .intro-text {
+        font-size: 16px;
+    }
+}
+.slideImage {
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+/*_____________________________________________________*/
+/*Карусель*/
+
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+  margin:0 auto;
+  display: table;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  align-items: center;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text */
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  align-items: center;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
+}
+
+/*Форма регистрации*/
+form {
+    margin-top: 20px;
+    background-color: #81a594;
+    color: #005780;
+    margin: 0 auto;
+    width: 450px;
+    height: 400px;
+    padding 20px;
+    box-shadow: 2px 2px 5px black;
+    margin-bottom: 200px;
+}
+.group {
+    margin: 10px;
+    padding: 5px;
+}
+.regLable {
+    color: #00263e;
+    font-size: 23px;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+.regTitle {
+    text-align: center;
+    background: white;
+    padding-left: 5px;
+    cursor: help;
+    margin: 0;
+}
+.group input {
+    margin-top: 10px;
+    height: 30px;
+    width: 400px;
+    font-size: 20px;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+}
+.group input:focus {
+    border: 2px solid #009be4;
+    transform: translateX(15px);
+}
+
+button {
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px 30px;
+    height: 50px;
+    width: 200px;
+    background: #009be4;
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+button:hover {
+    opacity: .80;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+.regRef {
+    padding-left: 20px;
+    color: #005780;
+    text-decoration: none;
+}
+.regRef:hover {
+    color: white;
+    font-size: 17px;
+}
