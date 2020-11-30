@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import React from 'react'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    meta: {layout: 'main'},
-    component: () => import('../views/Home.vue')
-  },
+    {
+        path: '/',
+        name: 'home',
+        meta: {layout: 'main'},
+        component: () => import('../views/Home.vue')
+    },
   {
       path: '/login',
       name: 'login',

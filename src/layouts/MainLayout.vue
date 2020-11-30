@@ -7,7 +7,7 @@
       <li><a><router-link to="/">Home</router-link></a></li>
       <li><a><router-link to="/News">News</router-link></a></li>
       <li><a><router-link to="">Marker</router-link></a></li>
-      <li><a><router-link to="/Register">Personal Area</router-link></a></li>
+      <li><a><router-link to="/Login">Personal Area</router-link></a></li>
       <li><a><router-link to="">About us</router-link></a></li>
     </ul>
     <span class="toggle">☰</span>
