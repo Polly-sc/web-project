@@ -1,3 +1,4 @@
+import React from 'react';
 <template>
 <form class="card auth-card">
 <div class="card-content">
@@ -34,7 +35,7 @@
 
   <p class="center">
     Нет аккаунта?
-    <a href="/"><router-link to="/">Зарегистрироваться</router-link></a>
+    <a href="/"><router-link to="./Register">Зарегистрироваться</router-link></a>
   </p>
 </div>
 </form>

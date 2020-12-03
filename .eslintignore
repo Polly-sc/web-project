@@ -1,2 +1,3 @@
-./views/register.vue
-./router/router.js
+src/views/Register.vue
+src/router/router.js
+src/views/Login.vue

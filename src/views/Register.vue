@@ -1,8 +1,9 @@
+import React from 'react';
 <template>
- <!-- <div>
+ <div>
     <form class="card auth-card">
       <div class="card-content">
-        <span class="card-title">Домашняя бухгалтерия</span>
+        <span class="card-title">Регистрация</span>
         <div class="input-field">
           <input
               id="email"
@@ -50,10 +51,10 @@
 
         <p class="center">
           Уже есть аккаунт?
-          <a href="/">Войти!</a>
+          <a><router-link to="/Login">Войти!</router-link></a>
         </p>
       </div>
     </form>
-  </div> -->
+  </div>
 </template>
 

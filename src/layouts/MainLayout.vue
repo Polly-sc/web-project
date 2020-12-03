@@ -1,4 +1,5 @@
- <template>
+import React from 'react';
+<template>
    <div>
  <input type="checkbox" id=checkbox-menu>
   <label for="checkbox-menu">

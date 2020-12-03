@@ -1,3 +1,4 @@
+import React from 'react';
 <template>
   <div class="intro">
     <main class="main columns">
