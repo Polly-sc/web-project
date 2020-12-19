@@ -43,16 +43,21 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'api/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>'
             ],
         ],
-        */
     ],
     'params' => $params,
+    'modules' => [
+             'v1' => [
+                 'class' => 'app\modules\v1\v1'
+             ]
+         ]
 ];
 
 if (YII_ENV_DEV) {
