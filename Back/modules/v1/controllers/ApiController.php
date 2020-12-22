@@ -1,5 +1,4 @@
 <?php
-
 namespace app\modules\v1\controllers;
 
 use yii\filters\auth\CompositeAuth;
