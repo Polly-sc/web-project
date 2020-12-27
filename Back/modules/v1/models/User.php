@@ -1,4 +1,5 @@
 <?php
+
 namespace app\modules\v1\models;
 
 use Yii;
@@ -11,7 +12,7 @@ use Yii;
  * @property string $password Пароль
  * @property string|null $email Электронная почта
  *
- * @property Favorites[] $favorites
+ * @property Order[] $orders
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -32,7 +33,7 @@ class User extends \yii\db\ActiveRecord
             [['name', 'password'], 'required'],
             [['name'], 'string', 'max' => 150],
             [['password'], 'string', 'max' => 50],
-            [['email', 'telephone'], 'string', 'max' => 100],
+            [['email'], 'string', 'max' => 100],
         ];
     }
 
@@ -45,17 +46,7 @@ class User extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Имя',
             'password' => 'Пароль',
-            'email' => 'Электронная почта',
+            'email' => 'Электронная почта'
         ];
-    }
-
-    /**
-     * Gets query for [[Orders]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFavorites()
-    {
-        return $this->hasMany(Favorites::className(), ['idUser' => 'id']);
     }
 }

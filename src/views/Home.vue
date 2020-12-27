@@ -4,17 +4,17 @@ import React from 'react';
 <div class="container">
   <div class="slideshow-container">
     <div class="mySlides fade" style="display: block;">
-      <div class="numbertext">1 / 3</div>
+<!--      <div class="numbertext">1 / 3</div>-->
       <img class="slideImage" src="../assets/image/slide1.jpg" alt="">
     </div>
 
     <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
+<!--      <div class="numbertext">2 / 3</div>-->
       <img class="slideImage" src="../assets/image/slide2.jpg" alt="">
     </div>
 
     <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
+<!--      <div class="numbertext">3 / 3</div>-->
       <img class="slideImage" src="../assets/image/slide3.jpg" alt="">
     </div>
 
@@ -30,3 +30,9 @@ import React from 'react';
 </div>
 </div>
 </template>
+
+<script>
+export default {
+  name: "Home"
+}
+</script>

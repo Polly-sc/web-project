@@ -3,71 +3,75 @@ import React from 'react';
   <div class="intro">
     <main class="main columns">
       <section class="column main-column">
-        <router-link to="/new1">
+        <router-link v-bind:to="{name: 'post', params: {url: items[2].url}}">
         <a class="article first-article">
           <figure class="article-image is-4by3">
-            <img src="../assets/image/new1.jpg" alt="">
+            <img v-bind:src="items[2].img" alt="">
           </figure>
           <div class="article-body">
             <h2 class="article-title">
-              Выставка Roma Aeterna.
+              {{items[2].name}}
             </h2>
             <p class="article-content">
-              До 19 февраля 2017 года в Инженерном корпусе Государственной Третьяковской галереи в Москве проходит выставка «Roma Aeterna. Шедевры Пинакотеки Ватикана». Дизайн этой уникальной экспозиции, вобравшей в себя 42 раритета из собрания одного из самых известных музеев мира, разработали архитекторы Сергей Чобан и Агния Стерлигова.
+              {{items[2].descriptionShort}}
             </p>
             <footer class="article-info">
-              <span>By Joe Smith</span>
+<!--              <span>By Joe Smith</span>-->
+<!--              <span>42 comments</span>-->
             </footer>
           </div>
         </a>
         </router-link>
         <div class="columns">
           <div class="column nested-column">
-            <a class="article" href="#">
+            <router-link v-bind:to="{name: 'post', params: {url: items[1].url}}">
+            <a class="article">
               <figure class="article-image is-16by9">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-02-lo.jpg" alt="">
+                <img v-bind:src="items[1].img" alt="">
               </figure>
               <div class="article-body">
                 <h2 class="article-title">
-                  Hello World
+                  {{items[1].name}}
                 </h2>
                 <p class="article-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                  {{items[1].descriptionShort}}
                 </p>
                 <footer class="article-info">
-                  <span>By Joe Smith</span>
-                  <span>42 comments</span>
+<!--                  <span>By Joe Smith</span>-->
+<!--                  <span>42 comments</span>-->
                 </footer>
               </div>
             </a>
+           </router-link>
           </div>
-
           <div class="column">
-            <a class="article" href="#">
+            <router-link v-bind:to="{name: 'post', params: {url: items[3].url}}">
+            <a class="article">
               <figure class="article-image is-16by9">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-03-lo.jpg" alt="">
+                <img v-bind:src="items[3].img" alt="">
               </figure>
               <div class="article-body">
                 <h2 class="article-title">
-                  Hello World
+                  {{items[3].name}}
                 </h2>
                 <p class="article-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  {{items[3].descriptionShort}}
                 </p>
                 <footer class="article-info">
-                  <span>By Joe Smith</span>
-                  <span>42 comments</span>
+<!--                  <span>By Joe Smith</span>-->
+<!--                  <span>42 comments</span>-->
                 </footer>
               </div>
             </a>
-            <a class="article" href="#">
+            </router-link>
+            <router-link v-bind:to="{name: 'post', params: {url: items[0].url}}">
+            <a class="article">
               <div class="article-body">
                 <h2 class="article-title">
-                  Hello World
+                  {{items[0].name}}
                 </h2>
                 <p class="article-content">
-                  Lorem ipsum dolor sit amet.
+                  {{items[0].descriptionShort}}
                 </p>
                 <footer class="article-info">
                   <span>By Joe Smith</span>
@@ -75,87 +79,106 @@ import React from 'react';
                 </footer>
               </div>
             </a>
-            <a class="article" href="#">
+            </router-link>
+            <router-link v-bind:to="{name: 'post', params: {url: items[5].url}}">
+            <a class="article">
               <div class="article-body">
                 <h2 class="article-title">
-                  Hello World
+                  {{items[5].name}}
                 </h2>
                 <p class="article-content">
-                  Lorem ipsum dolor sit amet feugiat facilisis.
+                  {{items[5].descriptionShort}}
                 </p>
                 <footer class="article-info">
-                  <span>By Joe Smith</span>
-                  <span>42 comments</span>
+<!--                  <span>By Joe Smith</span>-->
+<!--                  <span>42 comments</span>-->
                 </footer>
               </div>
             </a>
+            </router-link>
           </div>
         </div>
       </section>
-
-      <section class="column">
-        <a class="article" href="#">
-          <figure class="article-image is-3by2">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">
-          </figure>
-          <div class="article-body">
-            <h2 class="article-title">
-              Hello World
-            </h2>
-            <p class="article-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <footer class="article-info">
-              <span>By Joe Smith</span>
-              <span>42 comments</span>
-            </footer>
-          </div>
-        </a>
-        <a class="article" href="#">
-          <div class="article-body">
-            <h2 class="article-title">
-              Hello World
-            </h2>
-            <p class="article-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <footer class="article-info">
-              <span>By Joe Smith</span>
-              <span>42 comments</span>
-            </footer>
-          </div>
-        </a>
-        <a class="article" href="#">
-          <div class="article-body">
-            <h2 class="article-title">
-              Hello World
-            </h2>
-            <p class="article-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <footer class="article-info">
-              <span>By Joe Smith</span>
-              <span>42 comments</span>
-            </footer>
-          </div>
-        </a>
-        <a class="article" href="#">
-          <div class="article-body">
-            <h2 class="article-title">
-              Hello World
-            </h2>
-            <p class="article-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <footer class="article-info">
-              <span>By Joe Smith</span>
-              <span>42 comments</span>
-            </footer>
-          </div>
-        </a>
-      </section>
+<!--      <section class="column">-->
+<!--        <a class="article" href="#">-->
+<!--          <figure class="article-image is-3by2">-->
+<!--            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/image-04-lo.jpg" alt="">-->
+<!--          </figure>-->
+<!--          <div class="article-body">-->
+<!--            <h2 class="article-title">-->
+<!--              Hello World-->
+<!--            </h2>-->
+<!--            <p class="article-content">-->
+<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--            </p>-->
+<!--            <footer class="article-info">-->
+<!--              <span>By Joe Smith</span>-->
+<!--              <span>42 comments</span>-->
+<!--            </footer>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--        <a class="article" href="#">-->
+<!--          <div class="article-body">-->
+<!--            <h2 class="article-title">-->
+<!--              Hello World-->
+<!--            </h2>-->
+<!--            <p class="article-content">-->
+<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--            </p>-->
+<!--            <footer class="article-info">-->
+<!--              <span>By Joe Smith</span>-->
+<!--              <span>42 comments</span>-->
+<!--            </footer>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--        <a class="article" href="#">-->
+<!--          <div class="article-body">-->
+<!--            <h2 class="article-title">-->
+<!--              Hello World-->
+<!--            </h2>-->
+<!--            <p class="article-content">-->
+<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--            </p>-->
+<!--            <footer class="article-info">-->
+<!--              <span>By Joe Smith</span>-->
+<!--              <span>42 comments</span>-->
+<!--            </footer>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--        <a class="article" href="#">-->
+<!--          <div class="article-body">-->
+<!--            <h2 class="article-title">-->
+<!--              Hello World-->
+<!--            </h2>-->
+<!--            <p class="article-content">-->
+<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--            </p>-->
+<!--            <footer class="article-info">-->
+<!--              <span>By Joe Smith</span>-->
+<!--              <span>42 comments</span>-->
+<!--            </footer>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </section>-->
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  name: "News",
+  data() {
+    return {
+      data: [],
+      author: [],
+      items: []
+    }
+  },
+  created() {
+    this.$http.get('/post/all')
+        .then((response) => this.items = response.data)
+  }
+}
+</script>

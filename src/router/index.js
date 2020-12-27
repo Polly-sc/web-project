@@ -1,5 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import News from '../views/News'
+import Post from '../views/Post'
+import Register from '../views/Register'
+import Login from '../views/Login'
+import Home from '../views/Home'
+import Favorites from '../views/Favorites'
+import Favoriteslist from "@/views/List";
 Vue.use(VueRouter)
 
 const routes = [
@@ -7,31 +14,43 @@ const routes = [
         path: '/',
         name: 'home',
         meta: {layout: 'main'},
-        component: () => import('../views/Home.vue')
+        component: Home
     },
   {
       path: '/login',
       name: 'login',
       meta: {layout: 'empty'},
-      component: () => import('../views/Login.vue')
+      component: Login
   },
+    {
+        path: '/favorites',
+        name: 'favorites',
+        meta: {layout: 'main'},
+        component: Favorites
+    },
     {
         path: '/news',
         name: 'news',
         meta: {layout: 'main'},
-        component: () => import('../views/News.vue')
+        component: News
     },
     {
-        path: '/new1',
-        name: 'new1',
+        path: '/news/:url',
+        name: 'post',
         meta: {layout: 'main'},
-        component: () => import('../views/New1.vue')
+        component: Post
     },
     {
         path: '/register',
         name: 'register',
         meta: {layout: 'empty'},
-        component: () => import('../views/Register.vue')
+        component: Register
+    },
+    {
+        path: '/list',
+        name: 'list',
+        meta: {layout: 'main'},
+        component: Favoriteslist
     },
 ]
 

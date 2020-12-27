@@ -13,7 +13,7 @@ class m201221_093608_create_author_table extends Migration
    public function safeUp()
    {
        $this->createTable('{{%author}}', [
-           'id' => $this->primaryKey(),
+           'id' => $this->primaryKey()->notNull(),
            'name' => $this->string(100)->notNull()->comment('Имя'),
 
        ]);

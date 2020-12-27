@@ -15,10 +15,10 @@ export default {
     layout() {
       return (this.$route.meta.layout || 'empty') + '-layout'
     }
-    },
-    components: {
-      EmptyLayout: EmptyLayout, MainLayout: MainLayout
-    }
+  },
+  components: {
+    EmptyLayout: EmptyLayout, MainLayout: MainLayout
+  }
 }
 </script>
 

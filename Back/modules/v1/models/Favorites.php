@@ -1,6 +1,10 @@
 <?php
 namespace app\modules\v1\models;
 
+<?php
+
+namespace app\models;
+
 use Yii;
 
 /**

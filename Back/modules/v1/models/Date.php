@@ -48,8 +48,8 @@ class Date extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getDate()
+    public function getPosts()
     {
-        return $this->hasMany(Date::className(), ['idDate' => 'id']);
+        return $this->hasMany(Post::className(), ['idDate' => 'id']);
     }
 }

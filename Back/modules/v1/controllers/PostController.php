@@ -21,23 +21,29 @@ class PostController extends ApiController {
     }
 
     public function actionIdAuthor($idAuthor) {
-        return Post::findAll(['idAuthor' => $idAuthor]);
+        return Author::findAll(['idAuthor' => $idAuthor]);
     }
 
     public function actionIdDate($idDate) {
-        return Post::findAll(['idDate' => $idDate]);
+        return Date::findAll(['idDate' => $idDate]);
     }
 
-    public function actionHitposts() {
-        return Post::findAll(['hitPost' => 1]);
-    }
+    public function actionInfo($url)
+     {
+         $product = Product::findOne()
+             //->with(['category', 'propertiesValues', 'propertiesValues.property'])
+             ->where(['url' => $url])
+             ->one();
+
+         return $product;
+     }
 
     public function actionCreate() {
-        $post = new Post();
-        $post->load(Yii::$app->request->getBodyParams(), '');
-        $post->save();
+        $model = new Post();
+        $model->load(Yii::$app->request->getBodyParams(), '');
+        $model->save();
 
-        return $post;
+        return $model;
     }
 
 }

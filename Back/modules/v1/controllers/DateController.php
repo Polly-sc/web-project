@@ -15,10 +15,10 @@ class DateController extends ApiController {
     }
 
     public function actionCreate() {
-        $date = new Date();
-        $date->load(Yii::$app->request->getBodyParams(), '');
-        $date->save();
+        $model = new Date();
+        $model->load(Yii::$app->request->getBodyParams(), '');
+        $model->save();
 
-        return $date;
+        return $model;
     }
 }

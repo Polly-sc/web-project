@@ -57,7 +57,7 @@
 }
 
 .menu li a:last-child{
-    margin-right: 30px;
+    margin-right: 0px;
 }
 
 .menu li a:after {
@@ -90,7 +90,7 @@
 }
 
 .menu li a.logo {
-    margin-right: 100px;
+    margin-right: 500px;
     font-size: 40px;
     color: #005780;
     align-items: center;

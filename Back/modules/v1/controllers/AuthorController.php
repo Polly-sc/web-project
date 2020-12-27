@@ -6,19 +6,19 @@ use Yii;
 
 class AuthorController extends ApiController {
 
+    public function actionCreate() {
+        $model = new Author();
+        $model->load(Yii::$app->request->getBodyParams(), '');
+        $model->save();
+
+        return $model;
+    }
+
     public function actionAll() {
         return Author::find()->all();
     }
 
     public function actionId($id) {
         return Author::findOne(['id' => $id]);
-    }
-
-    public function actionCreate() {
-        $author = new Author();
-        $author->load(Yii::$app->request->getBodyParams(), '');
-        $author->save();
-
-        return $author;
     }
 }

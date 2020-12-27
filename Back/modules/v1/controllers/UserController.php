@@ -1,65 +1,74 @@
 <?php
 namespace app\modules\v1\controllers;
 
-use yii\rest\Controller;
+use app\modules\v1\models\User;
 use Yii;
 
- class UserController extends ApiController {
-  public function actionLogin($username, $password) {
-          $user = User::findOne(['name' => $username, 'password' => $password]);
+class UserController extends ApiController {
+    public function actionLogin() {
 
-          if ($user == null) {
-              return [
-                  'statusText' => "Неправильно введено имя пользователя или пароль"
-              ];
-          }
+        $username = Yii::$app->request->getBodyParam('username');
+        $password = Yii::$app->request->getBodyParam('password');
 
-          while (true) {
-              $token = md5(microtime(true));
+        $user = User::findOne(['name' => $username, 'password' => $password]);
 
-              $userWithSameToken = User::findOne(['accessToken' => $token]);
-              if ($userWithSameToken != null){
-                  continue;
-              } else {
-                  $user->accessToken = $token;
-                  $user->save();
-                  break;
-              }
-          }
-
-          return $user->accessToken;
-      }
-  public function actionRegister($username, $password) {
-           $user = User::findOne(['name' => $username]);
-
-           if ($user != null){
-               return [
-                   'statusText' => "Пользователь с таким логином уже существует"
-               ];
-           }
-
-           $newUser = new User();
-           $newUser->name = $username;
-           $newUser->password = $password;
-
-           while (true){
-               $token = md5(microtime(true));
-
-               $userWithSameToken = User::findOne(['accessToken' => $token]);
-               if ($userWithSameToken != null){
-                   continue;
-               } else {
-                   $newUser->accessToken = $token;
-                   break;
-               }
-           }
-
-           $newUser->save();
-
-           return $newUser->accessToken;
-       }
-
-        public function actionAll() {
-        return User::find()->all();
+        if ($user == null) {
+            return [
+                'statusText' => "Неправильно введено имя пользователя или пароль"
+            ];
         }
-   }
+
+        while (true) {
+            $token = md5(microtime(true));
+
+            $userWithSameToken = User::findOne(['accessToken' => $token]);
+            if ($userWithSameToken != null){
+                continue;
+            } else {
+                $user->accessToken = $token;
+                $user->save();
+                break;
+            }
+        }
+
+        return $user;
+    }
+
+    public function actionRegister() {
+
+        $username = Yii::$app->request->getBodyParam('username');
+        $password = Yii::$app->request->getBodyParam('password');
+
+        $user = User::findOne(['name' => $username]);
+
+        if ($user != null){
+            return [
+                'statusText' => "Пользователь с таким логином уже существует"
+            ];
+        }
+
+        $newUser = new User();
+        $newUser->name = $username;
+        $newUser->password = $password;
+
+        while (true){
+            $token = md5(microtime(true));
+
+            $userWithSameToken = User::findOne(['accessToken' => $token]);
+            if ($userWithSameToken != null){
+                continue;
+            } else {
+                $newUser->accessToken = $token;
+                break;
+            }
+        }
+
+        $newUser->save();
+
+        return $newUser;
+    }
+        public function actionAll() {
+            return User::find()->all();
+        }
+
+}

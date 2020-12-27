@@ -20,10 +20,10 @@ class FavoritesController extends ApiController {
     }
 
     public function actionCreate() {
-        $favorites = new favorites();
-        $favorites->load(Yii::$app->request->getBodyParams(), '');
-        $favorites->save();
+        $model = new Favorites();
+        $model->load(Yii::$app->request->getBodyParams(), '');
+        $model->save();
 
-        return $post;
+        return '$model';
     }
 }

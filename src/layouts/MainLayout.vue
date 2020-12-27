@@ -7,9 +7,8 @@ import React from 'react';
       <li><a class="logo" href="#">EVENT MBA</a></li>
       <li><a><router-link to="/">Home</router-link></a></li>
       <li><a><router-link to="/News">News</router-link></a></li>
-      <li><a><router-link to="">Marker</router-link></a></li>
-      <li><a><router-link to="/Login">Personal Area</router-link></a></li>
-      <li><a><router-link to="">About us</router-link></a></li>
+      <li><a><router-link to="/Favorites">Favorites</router-link></a></li>
+<!--      <li><a><router-link to="/List">Personal Area</router-link></a></li>-->
     </ul>
     <span class="toggle">☰</span>
   </label>
@@ -30,3 +29,7 @@ import React from 'react';
   </div>
    </div>
  </template>
+
+<script>
+
+</script>

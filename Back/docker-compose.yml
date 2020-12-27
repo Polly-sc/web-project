@@ -16,5 +16,3 @@ services:
      - MYSQL_DATABASE=bd_web
      - MYSQL_USER=user
      - MYSQL_PASSWORD=password
-
-
