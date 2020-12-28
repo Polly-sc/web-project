@@ -71,4 +71,8 @@ class UserController extends ApiController {
             return User::find()->all();
         }
 
+        public function actionAuthors($idAuthor){
+            $response = Chapter::findAll(['idAuthor' => $idAuthor]);
+            return $response;
+        }
 }

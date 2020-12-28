@@ -52,6 +52,12 @@ const routes = [
         meta: {layout: 'main'},
         component: Favoriteslist
     },
+    {
+        path: '/filtration',
+        name: 'filtration',
+        meta: {layout: 'main'},
+        component: Favoriteslist
+    },
 ]
 
 const router = new VueRouter({

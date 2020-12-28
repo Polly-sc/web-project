@@ -20,12 +20,12 @@ class PostController extends ApiController {
         return Post::findOne(['url' => $url]);
     }
 
-    public function actionIdAuthor($idAuthor) {
-        return Author::findAll(['idAuthor' => $idAuthor]);
+    public function actionAuthor($idAuthor) {
+        return Post::findAll(['idAuthor' => $idAuthor]);
     }
 
-    public function actionIdDate($idDate) {
-        return Date::findAll(['idDate' => $idDate]);
+    public function actionDate($idDate) {
+        return Post::findAll(['idDate' => $idDate]);
     }
 
     public function actionInfo($url)

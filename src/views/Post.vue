@@ -21,7 +21,10 @@ import React from 'react';
             </p>
             <footer class="article-info">
               <span><button class="btn btn-outline-success" v-on:click="addToFavorites">Добавить в избранное </button></span>
-              <span></span>
+              <span>{{date.date}}</span>
+              <router-link v-bind:to="{name: 'filtration', params: {idAuthor: post.idAuthor}}">
+              <span>{{author.name}}</span>
+              </router-link>
             </footer>
           </div>
         </a>
@@ -36,18 +39,34 @@ import FavoritesData from '@/components/favorites'
     name: "Post",
     data() {
       return {
-        post: {}
+        post: {},
+        date: {},
+        author: {}
       }
     },
     created() {
       const url = this.$route.params.url
+      const idDate = this.$route.params.idDate
+      const idAuthor = this.$route.params.idAuthor
 
       this.$http.get('/post/url', {params: {url: url}})
           .then((response) => {
             console.log(response.data)
             this.post = response.data
           })
-    },
+
+      this.$http.get('/date/id', {params: {id: idDate}})
+          .then((response) => {
+            console.log(response.data)
+            this.date = response.data
+          })
+
+    this.$http.get('/author/id', {params: {id: idAuthor}})
+        .then((response) => {
+          console.log(response.data)
+          this.author = response.data
+        })
+  },
     methods: {
       addToFavorites() {
         FavoritesData.add(this.post)
