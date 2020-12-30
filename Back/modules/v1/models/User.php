@@ -7,12 +7,13 @@ use Yii;
 /**
  * This is the model class for table "user".
  *
+ * @property string $accessToken
  * @property int $id
  * @property string $name Имя
  * @property string $password Пароль
  * @property string|null $email Электронная почта
  *
- * @property Order[] $orders
+ * @property Favorites[] $favorites
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -30,7 +31,8 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'password'], 'required'],
+            [['accessToken', 'name', 'password'], 'required'],
+            [['accessToken'], 'string', 'max' => 200],
             [['name'], 'string', 'max' => 150],
             [['password'], 'string', 'max' => 50],
             [['email'], 'string', 'max' => 100],
@@ -43,10 +45,21 @@ class User extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'accessToken' => 'Access Token',
             'id' => 'ID',
             'name' => 'Имя',
             'password' => 'Пароль',
-            'email' => 'Электронная почта'
+            'email' => 'Электронная почта',
         ];
+    }
+
+    /**
+     * Gets query for [[Favorites]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFavorites()
+    {
+        return $this->hasMany(Favorites::className(), ['idUser' => 'id']);
     }
 }

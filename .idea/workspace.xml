@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37962f4c-9a20-481b-80e3-957dc441aced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/Filtration.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back/modules/v1/controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/modules/v1/controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back/modules/v1/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/modules/v1/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/modules/v1/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/modules/v1/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Favorites.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Favorites.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Filtration.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Filtration.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/News.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/News.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Post.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Post.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Отчеты/Лабораторная работа №6.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Отчеты/Лабораторная работа №6.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,15 +143,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Back" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/user" />
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/Back" />
       <recent name="$PROJECT_DIR$/Back/modules/v1/models" />
       <recent name="$PROJECT_DIR$/Back/basic/web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Back" />
     </key>
   </component>
   <component name="RunManager">
@@ -320,6 +323,34 @@
       <workItem from="1609156957391" duration="1718000" />
       <workItem from="1609158792279" duration="517000" />
       <workItem from="1609159375326" duration="88000" />
+      <workItem from="1609159902236" duration="1582000" />
+      <workItem from="1609161518526" duration="1631000" />
+      <workItem from="1609164072407" duration="589000" />
+      <workItem from="1609164773842" duration="1155000" />
+      <workItem from="1609167045220" duration="398000" />
+      <workItem from="1609172192901" duration="872000" />
+      <workItem from="1609174431683" duration="359000" />
+      <workItem from="1609237834123" duration="984000" />
+      <workItem from="1609239749876" duration="1015000" />
+      <workItem from="1609251736326" duration="1459000" />
+      <workItem from="1609253548145" duration="1188000" />
+      <workItem from="1609256463011" duration="1263000" />
+      <workItem from="1609259367450" duration="1144000" />
+      <workItem from="1609261889439" duration="839000" />
+      <workItem from="1609273930959" duration="1640000" />
+      <workItem from="1609276264450" duration="1025000" />
+      <workItem from="1609278085917" duration="1942000" />
+      <workItem from="1609281212476" duration="1458000" />
+      <workItem from="1609283028394" duration="1352000" />
+      <workItem from="1609284953479" duration="1307000" />
+      <workItem from="1609290414032" duration="1393000" />
+      <workItem from="1609292452629" duration="1591000" />
+      <workItem from="1609294290011" duration="1647000" />
+      <workItem from="1609296108850" duration="563000" />
+      <workItem from="1609297953423" duration="1761000" />
+      <workItem from="1609299775355" duration="1619000" />
+      <workItem from="1609311827111" duration="1592000" />
+      <workItem from="1609313770605" duration="1676000" />
     </task>
     <servers />
   </component>

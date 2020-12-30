@@ -3,7 +3,7 @@ import React from 'react';
   <div class="intro">
     <main class="main columns">
       <section class="column main-column">
-        <router-link v-bind:to="{name: 'post', params: {url: items[2].url, id: items[2].id}}">
+        <router-link v-bind:to="{name: 'post', params: {url: items[2].url, id: items[2].id, idAuthor: items[2].idAuthor}}">
         <a class="article first-article">
           <figure class="article-image is-4by3">
             <img v-bind:src="items[2].img" alt="">
@@ -24,7 +24,7 @@ import React from 'react';
         </router-link>
         <div class="columns">
           <div class="column nested-column">
-            <router-link v-bind:to="{name: 'post', params: {url: items[1].url, id: items[1].id}}">
+            <router-link v-bind:to="{name: 'post', params: {url: items[1].url, id: items[1].id, idAuthor: items[1].idAuthor}}">
             <a class="article">
               <figure class="article-image is-16by9">
                 <img v-bind:src="items[1].img" alt="">
@@ -45,7 +45,7 @@ import React from 'react';
            </router-link>
           </div>
           <div class="column">
-            <router-link v-bind:to="{name: 'post', params: {url: items[3].url, id: items[3].id}}">
+            <router-link v-bind:to="{name: 'post', params: {url: items[3].url, id: items[3].id, idAuthor: items[3].idAuthor}}">
             <a class="article">
               <figure class="article-image is-16by9">
                 <img v-bind:src="items[3].img" alt="">
@@ -64,7 +64,7 @@ import React from 'react';
               </div>
             </a>
             </router-link>
-            <router-link v-bind:to="{name: 'post', params: {url: items[0].url, id: items[0].id}}">
+            <router-link v-bind:to="{name: 'post', params: {url: items[0].url, id: items[0].id, idAuthor: items[0].idAuthor}}">
             <a class="article">
               <div class="article-body">
                 <h2 class="article-title">
@@ -74,8 +74,8 @@ import React from 'react';
                   {{items[0].descriptionShort}}
                 </p>
                 <footer class="article-info">
-                  <span>By Joe Smith</span>
-                  <span>22 comments</span>
+<!--                  <span>By Joe Smith</span>-->
+<!--                  <span>22 comments</span>-->
                 </footer>
               </div>
             </a>

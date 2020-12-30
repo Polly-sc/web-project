@@ -1,19 +1,13 @@
 import React from 'react';
 <template>
 <form class="card auth-card">
-<form @submit="handleSubmit">
-<!--  <section class="column main-column" style="padding-bottom: 320px">-->
-<!--    <div class="article" style="color: black; font-size: 20px">-->
-<!--      <h2 v-if="user" style="font-size: 25px">Вы зашли как {{ user.name }}</h2>-->
-<!--      <div/>-->
-<!--  <section/>-->
-<!--<h2 v-if="!user" style="font-size: 25px">-->
+<form @submit="signIn">
 <div class="card-content">
   <span class="card-title">Вход</span>
   <a href="/"><router-link to="news">Продолжить без входа</router-link></a>
   <div class="input-field">
-    <input id="username" type="text" class="validate" v-model="username">
-    <label for="username">Username</label>
+    <input id="name" type="text" class="validate" v-model="name">
+    <label for="name">name</label>
     <small class="helper-text invalid">Username</small>
   </div>
   <div class="input-field">
@@ -30,44 +24,52 @@ import React from 'react';
   <p class="center">Нет аккаунта?<a href="/"><router-link to="register">Зарегистрироваться</router-link></a>
   </p>
 </div>
-<!--</h2>>-->
 </form>
 </form>
 </template>
 
 <script>
-import router from '../router';
+import router from "../router";
+import User from '@/components/user/user'
 export default {
   name: "Login",
   data() {
     return {
-      username: '',
-      password: ''
+      name: '',
+      password: '',
+      errors: {},
+      user: User
     }
   },
-
   methods: {
-    handleSubmit: function (e) {
-      e.preventDefault()
-
-      const submissionData = {
-        username: this.username,
-        password: this.password,
+    signIn(e) {
+      if (this.validate()) {
+        // const result = {
+        //   name: this.name,
+        //   password: this.password
+        // }
+        this.$http.get('/user/login', {params: {username: this.name, password: this.password}})
+            .then((response) => { console.log(response.data)
+              if (response.data.username != undefined){
+                User.login(response.data)
+                router.push({ name: "favorites"})
+              }
+              else{
+                alert("Неправильно введен логин или пароль")
+              }
+            })
       }
-
-      this.$http.post('/user/login', submissionData)
-          .then((response) => {
-            localStorage.setItem('userData', JSON.stringify(response.data))
-            if (response.data.name != undefined){
-              console.log(response.data.name)
-              alert("Вы вошли в профиль", response.data.name)
-              router.push({ name: 'favorites' })
-            }
-            else{
-              alert("Неправильно введен логин или пароль")
-            }
-          })
-          .catch((error) => alert(error.response.data.statusText))
+      e.preventDefault();
+    },
+    validate() {
+      this.errors = {}
+      if (this.name.trim().length === 0) {
+        alert('Заполните Имя')
+      }
+      if (this.password.trim().length === 0) {
+        alert('Заполните Пароль')
+      }
+      return Object.keys(this.errors).length === 0
     }
   }
 }

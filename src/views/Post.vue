@@ -21,7 +21,7 @@ import React from 'react';
             </p>
             <footer class="article-info">
               <span><button class="btn btn-outline-success" v-on:click="addToFavorites">Добавить в избранное </button></span>
-              <span>{{date.date}}</span>
+<!--              <span>{{date.date}}</span>-->
               <router-link v-bind:to="{name: 'filtration', params: {idAuthor: post.idAuthor}}">
               <span>{{author.name}}</span>
               </router-link>

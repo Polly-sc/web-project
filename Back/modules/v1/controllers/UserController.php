@@ -5,34 +5,35 @@ use app\modules\v1\models\User;
 use Yii;
 
 class UserController extends ApiController {
+
     public function actionLogin() {
 
-        $username = Yii::$app->request->getBodyParam('username');
-        $password = Yii::$app->request->getBodyParam('password');
+            $username = Yii::$app->request->getBodyParam('username');
+            $password = Yii::$app->request->getBodyParam('password');
 
-        $user = User::findOne(['name' => $username, 'password' => $password]);
+            $user = User::findOne(['name' => $username, 'password' => $password]);
 
-        if ($user == null) {
-            return [
-                'statusText' => "Неправильно введено имя пользователя или пароль"
-            ];
-        }
-
-        while (true) {
-            $token = md5(microtime(true));
-
-            $userWithSameToken = User::findOne(['accessToken' => $token]);
-            if ($userWithSameToken != null){
-                continue;
-            } else {
-                $user->accessToken = $token;
-                $user->save();
-                break;
+            if ($user == null) {
+                return [
+                    'statusText' => "Неправильно введено имя пользователя или пароль"
+                ];
             }
-        }
 
-        return $user;
-    }
+            while (true) {
+                $token = md5(microtime(true));
+
+                $userWithSameToken = User::findOne(['accessToken' => $token]);
+                if ($userWithSameToken != null){
+                    continue;
+                } else {
+                    $user->accessToken = $token;
+                    $user->save();
+                    break;
+                }
+            }
+
+            return $user;
+        }
 
     public function actionRegister() {
 

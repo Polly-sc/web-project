@@ -6,6 +6,7 @@ import Register from '../views/Register'
 import Login from '../views/Login'
 import Home from '../views/Home'
 import Favorites from '../views/Favorites'
+import Filtration from '../views/Filtration'
 import Favoriteslist from "@/views/List";
 Vue.use(VueRouter)
 
@@ -56,7 +57,7 @@ const routes = [
         path: '/filtration',
         name: 'filtration',
         meta: {layout: 'main'},
-        component: Favoriteslist
+        component: Filtration
     },
 ]
 
